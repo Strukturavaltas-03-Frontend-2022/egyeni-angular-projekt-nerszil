@@ -1,0 +1,102 @@
+<div class="row mt-3" *ngIf="cinema$ | async as cinema">
+  <div class="col-12">
+    <form
+      #editorForm="ngForm"
+      (ngSubmit)="onUpdate(cinema)"
+      class="mx-auto fw-semibold"
+      style="max-width: 400px"
+    >
+
+      <div class="form-group">
+        <label>Title</label
+        ><input
+          name="title"
+          [(ngModel)]="cinema.title"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div
+          *ngIf="editorForm.controls['title']?.invalid"
+          class="error-message"
+        >Invalid</div>
+      </div>
+      <div class="form-group">
+        <label>Genre</label
+        ><input
+          name="genre"
+          [(ngModel)]="cinema.genre"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div
+          *ngIf="editorForm.controls['genre']?.invalid"
+          class="error-message"
+        >Invalid</div>
+      </div>
+      <div class="form-group">
+        <label>Director</label
+        ><input
+          name="director"
+          [(ngModel)]="cinema.director"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div
+          *ngIf="editorForm.controls['director']?.invalid"
+          class="error-message"
+        >Invalid</div>
+      </div>
+      <div class="form-group">
+        <label>ReleaseYear</label
+        ><input
+          name="releaseYear"
+          [(ngModel)]="cinema.releaseYear"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div
+          *ngIf="editorForm.controls['releaseYear']?.invalid"
+          class="error-message"
+        >Invalid</div>
+      </div>
+
+      <div class="form-group">
+        <label>Studio</label
+        ><input
+          name="studio"
+          [(ngModel)]="cinema.studio"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div
+          *ngIf="editorForm.controls['studio']?.invalid"
+          class="error-message"
+        >Invalid</div>
+      </div>
+      <div class="form-group">
+        <label>Active</label
+        ><input
+          name="active"
+          [(ngModel)]="cinema.active"
+          type="text"
+          class="form-control"
+          required
+        />
+        <div
+          *ngIf="editorForm.controls['active']?.invalid"
+          class="error-message"
+        >Invalid</div>
+      </div>
+      <div class="d-grid gap-2 mt-3 ">
+        <button [disabled]="editorForm.invalid" class="btn btn-dark">
+          <i class="fa fa-save"></i>
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

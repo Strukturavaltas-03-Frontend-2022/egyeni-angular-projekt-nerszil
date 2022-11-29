@@ -1,0 +1,25 @@
+
+img {
+  object-fit:cover;
+  height: 100%;
+  width: auto;
+  object-fit: cover;
+  overflow: hidden;
+}
+
+.card {
+  height: 400px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+
+}
+
+.btn {
+  margin-bottom: 2px;
+}
+
+.my-pagination ::ng-deep .ngx-pagination .current {
+  background: grey;
+  border-radius: 3px;
+}

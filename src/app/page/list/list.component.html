@@ -1,0 +1,21 @@
+<div class="d-flex justify-content-center m-2">
+  <pagination-controls class="my-pagination" (pageChange)="p = $event"></pagination-controls>
+</div>
+<div class="container d-flex ">
+  <div class="row col-12 d-flex justify-content-start flex-wrap">
+    <div
+      class="col-sm-12 col-md-6 col-xl-3 mb-4"
+      *ngFor="
+        let row of cinemaList$
+          | async
+          | filter: (phrase$ | async)
+          | paginate: { itemsPerPage: 20, currentPage: p }
+      "
+    >
+      <app-card [row]="row" (onSelect)="onEdit($event)"></app-card>
+    </div>
+  </div>
+</div>
+<div class="d-flex justify-content-center">
+  <pagination-controls class=" my-pagination" (pageChange)="p = $event"></pagination-controls>
+</div>
